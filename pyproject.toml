@@ -1,0 +1,16 @@
+[project]
+name = "roosterly-ticket-agent"
+version = "0.1.0"
+description = "Support-ticket agent for the Roosterly helpdesk (Nordavo take-home)"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27",
+    "langchain>=1.5,<2",
+    "langchain-nvidia-ai-endpoints>=1.5,<2",
+    "langchain-text-splitters>=1,<2",
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+]
+
+[tool.uv]
+package = false

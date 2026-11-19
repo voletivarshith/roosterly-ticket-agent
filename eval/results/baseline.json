@@ -1,0 +1,250 @@
+{
+ "meta": {
+  "name": "baseline",
+  "at": "2026-11-19T10:28:44+00:00",
+  "model": "nvidia:mistralai/mistral-large-4-1t-a52b",
+  "reasoning_effort": "low",
+  "temperature": 0.0,
+  "examples": 10,
+  "runs": 1,
+  "commit": "uncommitted"
+ },
+ "summary": {
+  "decisions": 10,
+  "unsafe": 0,
+  "over_escalated": 1,
+  "correct": {
+   "action": 9,
+   "priority": 9,
+   "category": 8,
+   "language": 10
+  },
+  "model_alone": {
+   "action_correct": 10,
+   "unsafe": 0
+  },
+  "unstable_examples": [],
+  "median_seconds_per_ticket": 115.4,
+  "mean_tokens_in": 5465,
+  "mean_tokens_out": 938
+ },
+ "rows": [
+  {
+   "id": "E01",
+   "run": 1,
+   "label": {
+    "action": "reply",
+    "reason": "English ticket. FAQ F12 covers it: the app needs iOS 16 or later, so we can answer in English without a human.",
+    "category": "bug",
+    "language": "en",
+    "priority": "P3"
+   },
+   "action": "reply",
+   "priority": "P2",
+   "category": "bug",
+   "language": "en",
+   "proposed_action": "reply",
+   "reasons": [],
+   "confidence": 0.9,
+   "seconds": 212.3,
+   "tokens_in": 9835,
+   "tokens_out": 1311
+  },
+  {
+   "id": "E02",
+   "run": 1,
+   "label": {
+    "action": "reply",
+    "reason": "How to change invoice details is in FAQ F06. Reply in Dutch.",
+    "category": "billing",
+    "language": "nl",
+    "priority": "P4"
+   },
+   "action": "handoff",
+   "priority": "P4",
+   "category": "question",
+   "language": "nl",
+   "proposed_action": "reply",
+   "reasons": [
+    "crosscheck:unsupported_claim: To do this, go to Settings \u2192 Company Data."
+   ],
+   "confidence": 0.95,
+   "seconds": 93.6,
+   "tokens_in": 6695,
+   "tokens_out": 1480
+  },
+  {
+   "id": "E03",
+   "run": 1,
+   "label": {
+    "action": "handoff",
+    "reason": "Refund request ('terugkrijgen' = get back). Client rule: refunds always go to a human.",
+    "category": "billing",
+    "language": "nl",
+    "priority": "P2"
+   },
+   "action": "handoff",
+   "priority": "P2",
+   "category": "billing",
+   "language": "nl",
+   "proposed_action": "handoff",
+   "reasons": [
+    "rule:refund_or_disputed_charge"
+   ],
+   "confidence": 1.0,
+   "seconds": 14.5,
+   "tokens_in": 2744,
+   "tokens_out": 355
+  },
+  {
+   "id": "E04",
+   "run": 1,
+   "label": {
+    "action": "reply",
+    "reason": "Dutch how-to question about swapping shifts, answered by FAQ F03. Reply in Dutch.",
+    "category": "question",
+    "language": "nl",
+    "priority": "P4"
+   },
+   "action": "reply",
+   "priority": "P4",
+   "category": "question",
+   "language": "nl",
+   "proposed_action": "reply",
+   "reasons": [],
+   "confidence": 1.0,
+   "seconds": 151.4,
+   "tokens_in": 7070,
+   "tokens_out": 1622
+  },
+  {
+   "id": "E05",
+   "run": 1,
+   "label": {
+    "action": "reply",
+    "reason": "Feature request (Google Calendar sync). Acknowledge in Dutch and point to the roadmap (F10).",
+    "category": "feature_request",
+    "language": "nl",
+    "priority": "P4"
+   },
+   "action": "reply",
+   "priority": "P4",
+   "category": "feature_request",
+   "language": "nl",
+   "proposed_action": "reply",
+   "reasons": [],
+   "confidence": 0.95,
+   "seconds": 43.6,
+   "tokens_in": 6692,
+   "tokens_out": 1158
+  },
+  {
+   "id": "E06",
+   "run": 1,
+   "label": {
+    "action": "handoff",
+    "reason": "One customer blocked from publishing: P2, needs an engineer.",
+    "category": "bug",
+    "language": "en",
+    "priority": "P2"
+   },
+   "action": "handoff",
+   "priority": "P2",
+   "category": "bug",
+   "language": "en",
+   "proposed_action": "handoff",
+   "reasons": [],
+   "confidence": 0.9,
+   "seconds": 200.8,
+   "tokens_in": 2746,
+   "tokens_out": 434
+  },
+  {
+   "id": "E07",
+   "run": 1,
+   "label": {
+    "action": "reply",
+    "reason": "Price question answered by F05 (25 x \u20ac6 = \u20ac150 excl. VAT). Reply in Dutch.",
+    "category": "billing",
+    "language": "nl",
+    "priority": "P4"
+   },
+   "action": "reply",
+   "priority": "P4",
+   "category": "question",
+   "language": "nl",
+   "proposed_action": "reply",
+   "reasons": [],
+   "confidence": 1.0,
+   "seconds": 95.3,
+   "tokens_in": 6843,
+   "tokens_out": 1226
+  },
+  {
+   "id": "E08",
+   "run": 1,
+   "label": {
+    "action": "close",
+    "reason": "Spam (crypto offer): close it.",
+    "category": "other",
+    "language": "nl",
+    "priority": "P4"
+   },
+   "action": "close",
+   "priority": "P4",
+   "category": "other",
+   "language": "nl",
+   "proposed_action": "close",
+   "reasons": [],
+   "confidence": 1.0,
+   "seconds": 6.6,
+   "tokens_in": 2738,
+   "tokens_out": 183
+  },
+  {
+   "id": "E09",
+   "run": 1,
+   "label": {
+    "action": "handoff",
+    "reason": "GDPR access request ('inzageverzoek', AVG = Dutch GDPR): always a human.",
+    "category": "other",
+    "language": "nl",
+    "priority": "P2"
+   },
+   "action": "handoff",
+   "priority": "P2",
+   "category": "other",
+   "language": "nl",
+   "proposed_action": "handoff",
+   "reasons": [
+    "rule:personal_data_request"
+   ],
+   "confidence": 1.0,
+   "seconds": 140.2,
+   "tokens_in": 2744,
+   "tokens_out": 457
+  },
+  {
+   "id": "E10",
+   "run": 1,
+   "label": {
+    "action": "reply",
+    "reason": "Asks about planned maintenance tonight. Point to the status page (F11), in Dutch.",
+    "category": "question",
+    "language": "nl",
+    "priority": "P4"
+   },
+   "action": "reply",
+   "priority": "P4",
+   "category": "question",
+   "language": "nl",
+   "proposed_action": "reply",
+   "reasons": [],
+   "confidence": 1.0,
+   "seconds": 135.5,
+   "tokens_in": 6542,
+   "tokens_out": 1157
+  }
+ ],
+ "probes": []
+}
